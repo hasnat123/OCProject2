@@ -277,27 +277,78 @@ body main .menu__category__card-container {
 }
 body main .menu__category__card-container__card {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
   background-color: #fff;
   border-radius: 0.85rem;
-  padding: 0.75rem;
   box-shadow: 0 5px 15px 0 #dddddd;
+  overflow: hidden;
 }
-body main .menu__category__card-container__card__name {
+body main .menu__category__card-container__card__main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem;
+}
+body main .menu__category__card-container__card__main-content__name {
   font-size: clamp(17px, 1.8vw, 17px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.3s;
+  max-width: 18rem;
 }
-body main .menu__category__card-container__card__info {
+body main .menu__category__card-container__card__main-content__info {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
-body main .menu__category__card-container__card__info__description {
+body main .menu__category__card-container__card__main-content__info__description {
   font-size: 0.95rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 18rem;
+  transition: 0.3s;
 }
-body main .menu__category__card-container__card__info__price {
+body main .menu__category__card-container__card__main-content__info__price {
   margin-right: 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
+}
+body main .menu__category__card-container__card__tick-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  background-color: #99E2D0;
+  transition: 0.3s;
+  transform: translateX(1rem);
+}
+body main .menu__category__card-container__card__tick-container__tick-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #fff;
+  color: #99E2D0;
+  border-radius: 100%;
+  font-size: 110%;
+  transform: rotate(0);
+}
+body main .menu__category__card-container__card:hover > div:last-child {
+  width: 4.5rem;
+  transform: translateX(0);
+}
+body main .menu__category__card-container__card:hover > div:last-child > i {
+  transform: rotate(360deg);
+  transition: 0.3s;
+}
+body main .menu__category__card-container__card:not(:hover) > div:last-child > i {
+  transition: 0;
+}
+body main .menu__category__card-container__card:hover > div:first-child > div > p, body main .menu__category__card-container__card:hover > div:first-child > h3 {
+  max-width: 14rem;
 }
 body main .menu__btn-container {
   display: flex;
