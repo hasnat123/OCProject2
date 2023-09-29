@@ -47,6 +47,11 @@ body header {
   line-height: 1.75rem;
   box-shadow: 0 3px 4px 0 #cccccc;
 }
+body header.header--homepage {
+  visibility: hidden;
+  animation: appear 1s linear forwards;
+  animation-delay: 2s;
+}
 body header.header--restaurant-page {
   box-shadow: none;
 }
@@ -102,6 +107,10 @@ body main .hero__btn {
   border-radius: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
+}
+body main .hero__btn:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 0 2.5px 8.5px 2px #aeaeae;
 }
 body main .instructions-section {
   padding: 3rem 1.25rem;
@@ -194,17 +203,39 @@ body main .restaurants-section__cards-list__card-container__card__info {
 body main .restaurants-section__cards-list__card-container__card__info__location {
   font-size: 19px;
 }
-body main .restaurants-section__cards-list__card-container__card__info__heart {
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container {
   position: absolute;
   right: 1.75rem;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   cursor: pointer;
+  fill: transparent;
+  stroke-width: 20;
 }
-body main .restaurants-section__cards-list__card-container__card__info__heart::after {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  background-color: #9356DC;
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon {
+  overflow: visible;
+  stroke: #000000;
+  width: 1.5rem;
+}
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  stroke: none;
+}
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--main:hover {
+  stroke: #9356DC;
+}
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--main:hover > path {
+  animation: stroke-animation 2s ease-in-out forwards;
+}
+body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--main:hover ~ .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--bg > path {
+  animation: heart-fade 2s ease-in-out forwards;
 }
 body main .restaurants-section__cards-list__card-container__card__tag {
   position: absolute;
@@ -217,6 +248,48 @@ body main .restaurants-section__cards-list__card-container__card__tag {
   border-radius: 0.15rem;
   font-size: 0.95rem;
   font-weight: 600;
+}
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #9356DC;
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: #9356DC;
+  }
+}
+@keyframes heart-fade {
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #ae80e5;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 body main .hero {
   background-size: 100%;
@@ -248,10 +321,39 @@ body main .menu__header {
 body main .menu__header__restaurant-name {
   font-family: "Shrikhand", cursive;
 }
-body main .menu__header__heart-icon {
+body main .menu__header__heart-icon-container {
+  position: relative;
   font-size: 1.55rem;
   cursor: pointer;
   margin-right: 0.75rem;
+  fill: transparent;
+  stroke-width: 20;
+}
+body main .menu__header__heart-icon-container__heart-icon {
+  overflow: visible;
+  stroke: #000000;
+  width: 1.5rem;
+}
+body main .menu__header__heart-icon-container__heart-icon path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+body main .menu__header__heart-icon-container__heart-icon--bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  stroke: none;
+}
+body main .menu__header__heart-icon-container__heart-icon--main:hover {
+  stroke: #9356DC;
+}
+body main .menu__header__heart-icon-container__heart-icon--main:hover > path {
+  animation: stroke-animation 2s ease-in-out forwards;
+}
+body main .menu__header__heart-icon-container__heart-icon--main:hover ~ .menu__header__heart-icon-container__heart-icon--bg > path {
+  animation: heart-fade 2s ease-in-out forwards;
 }
 body main .menu__category__heading {
   position: relative;
@@ -281,6 +383,20 @@ body main .menu__category__card-container__card {
   border-radius: 0.85rem;
   box-shadow: 0 5px 15px 0 #dddddd;
   overflow: hidden;
+  animation: 0.5s ease-in-out forwards fade-in;
+  opacity: 0;
+}
+body main .menu__category__card-container__card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+body main .menu__category__card-container__card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+body main .menu__category__card-container__card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+body main .menu__category__card-container__card:nth-child(4) {
+  animation-delay: 0.8s;
 }
 body main .menu__category__card-container__card__main-content {
   flex: 1;
@@ -367,10 +483,76 @@ body main .menu__btn-container__btn {
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
   padding: 0.95rem 4.75rem;
 }
+body main .menu__btn-container__btn:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 0 2.5px 8.5px 2px #aeaeae;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #9356DC;
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: #9356DC;
+  }
+}
+@keyframes heart-fade {
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #ae80e5;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+body main.main--homepage {
+  visibility: hidden;
+  animation: appear 1s linear forwards;
+  animation-delay: 2s;
+}
 body .footer {
   color: #ffffff;
   background-color: #363636;
   padding: 1.5rem;
+}
+body .footer--homepage {
+  visibility: hidden;
+  animation: appear 1s linear forwards;
+  animation-delay: 2s;
 }
 body .footer__logo {
   font-family: "Shrikhand", cursive;
@@ -392,4 +574,43 @@ body .footer__list__item__icon {
   align-items: center;
   font-size: 0.75rem;
   width: 1rem;
+}
+body .loader {
+  position: fixed;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+  height: 120px;
+  width: 120px;
+  border: #9356DC solid 6px;
+  border-color: #9356DC transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, disappear 2s linear forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes appear {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }/*# sourceMappingURL=styles.css.map */

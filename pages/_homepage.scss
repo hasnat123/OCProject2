@@ -141,20 +141,55 @@
             font-size: 19px;
           }
 
-          &__heart
+          &__heart-icon-container
           {
-            position: absolute;
-            right: 1.75rem;
-            font-size: 1.75rem;
-            cursor: pointer;
+              position: absolute;
+              right: 1.75rem;
+              font-size: 1.55rem;
+              cursor: pointer;
+              fill: transparent;
+              stroke-width: 20;
 
-            &::after
-            {
-              content: "";
-              width: 2rem;
-              height: 2rem;
-              background-color: $primary-color;
-            }
+              &__heart-icon
+              {
+                  overflow: visible;
+                  stroke: $primary-font-color;
+                  width: 1.5rem;
+                  
+                  path
+                  {
+                      stroke-dashoffset: 0;
+                      stroke-dasharray: 1550;
+                      transform-origin: center;
+                  }
+  
+                  &--bg
+                  {
+                      position: absolute;
+                      z-index: -1;
+                      left: 0;
+                      right: 0;
+                      stroke: none;
+                  }
+  
+                  &--main
+                  {
+                      &:hover
+                      {
+                          stroke: $primary-color;
+                      }
+  
+                      &:hover > path
+                      {
+                          animation: stroke-animation 2s ease-in-out forwards;
+                      }
+  
+                      &:hover ~ .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--bg > path
+                      {
+                          animation: heart-fade 2s ease-in-out forwards;
+                      }
+                  }
+              }
           }
         }
         
@@ -173,5 +208,61 @@
         }
       }
     }
+  }
+}
+
+@keyframes stroke-animation
+{
+  0%
+  {
+      stroke-dashoffset: 0;
+  }
+  30%
+  {
+      stroke-dashoffset: 1550;
+  }
+  60%
+  {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+  }
+  80%
+  {
+      fill: $primary-color;
+      transform: scale(1.1);
+  }
+  90%
+  {
+      transform: scale(1);
+  }
+  100%
+  {
+      stroke-dashoffset: 3100;
+      fill: $primary-color;
+  }
+}
+
+@keyframes heart-fade
+{
+  70%
+  {
+      fill: transparent;
+      transform: scale(1);
+  }
+  80%
+  {
+      fill: lighten($primary-color, 10);
+      transform: scale(1.1);
+      opacity: 1;
+  }
+  90%
+  {
+      opacity: 1;
+  }
+  100%
+  {
+      transform: scale(2.5);
+      opacity: 0;
   }
 }
