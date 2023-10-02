@@ -1,9 +1,5 @@
 .hero
 {
-    background-size: 100%;
-    background-position: 0%;
-    height: 30vh;
-
     &--the-full-palette
     {
         background-image: url('../assets/images/the-full-palette.jpg');
@@ -35,27 +31,30 @@
     &__header
     {
         justify-content: space-between;
+        align-items: center;
         box-shadow: none;
 
         &__restaurant-name
         {
+            font-size: clamp(22.5px, 7vw, 30px);
             font-family: $secondary-font-family;
         }
 
         &__heart-icon-container
         {
             position: relative;
+            display: flex;
             font-size: 1.55rem;
             cursor: pointer;
             margin-right: 0.75rem;
             fill: transparent;
             stroke-width: 20;
-            
             &__heart-icon
             {
                 overflow: visible;
                 stroke: $primary-font-color;
-                width: 1.5rem;
+                width: clamp(1.35rem, 5.8vw, 1.8rem);
+
 
                 path
                 {
@@ -99,7 +98,7 @@
         &__heading
         {
             position: relative;
-            font-size: clamp(17px, 1.8vw, 17px);
+            font-size: clamp(17px, 3vw, 22px);
             font-weight: 100;
             margin-top: 2.5rem;
 
@@ -152,7 +151,7 @@
 
                     &__name
                     {
-                        font-size: clamp(17px, 1.8vw, 17px);
+                        font-size: clamp(17px, 3vw, 22px);
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
@@ -166,10 +165,10 @@
                         display: flex;
                         justify-content: space-between;
                         gap: 1rem;
+                        font-size: clamp(15.2px, 2.682vw, 19.67px);
     
                         &__description
                         {
-                            font-size: 0.95rem;
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;
@@ -180,7 +179,6 @@
                         &__price
                         {
                             margin-right: 0.5rem;
-                            font-size: 0.95rem;
                             font-weight: 600;
                         }
                     }
@@ -242,6 +240,15 @@
             @include button;
             padding: 0.95rem 4.75rem;
         }
+    }
+    @media only screen and (min-width: 768px)
+    {
+      padding: 2rem 4rem;
+      justify-content: space-between;
+    }
+    @media only screen and (min-width: 1024px)
+    {
+      padding: 2rem 1.25rem;
     }
 
 }

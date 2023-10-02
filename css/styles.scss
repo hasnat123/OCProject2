@@ -24,9 +24,9 @@ $primary-background-color: #F2F2F2;
 $secondary-background-color: #e4e4e4;
 $tertiary-background-color: #363636;
 
-$h1-font-size: clamp(30px, 2.3vw, 30px);
-$h2-font-size: clamp(25px, 1.9vw, 25px);
-$h3-font-size: clamp(20px, 1.8vw, 20px);
+$h1-font-size: clamp(30px, 8vw, 35px);
+$h2-font-size: clamp(22.5px, 7vw, 27.5px);
+$h3-font-size: clamp(18px, 5vw, 20px);
 
 @mixin flex-center
 {
@@ -45,6 +45,8 @@ $h3-font-size: clamp(20px, 1.8vw, 20px);
   border-radius: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
+  font-size: clamp(1rem, 3.8vw, 1.35rem);
+
 
   &:hover
   {
@@ -102,6 +104,16 @@ body
       visibility: hidden;
       animation: appear 1s linear forwards;
       animation-delay: 2s;
+
+      @media only screen and (min-width: 768px)
+      {
+        padding: 0.25rem 2rem;
+        justify-content: space-between;
+      }
+      @media only screen and (min-width: 1024px)
+      {
+        padding: 0.5rem 4rem;
+      }
     }
 
     &.header--restaurant-page
@@ -116,11 +128,37 @@ body
   
         .header__arrow
         {
-          font-size: 1.25rem;
+          font-size: clamp(1.25rem, 4.7vw, 1.5rem);
           font-weight: 600;
         }
       }
+
+      @media only screen and (min-width: 768px)
+      {
+        padding: 0.25rem 2rem;
+      }
+      @media only screen and (min-width: 1024px)
+      {
+        padding: 0.5rem 4rem;
+      }
     }
+
+    .header__location
+    {
+      display: none;
+      font-weight: 600;
+      font-size: 1.15rem;
+
+      &__icon
+      {
+        margin-right: 0.75rem;
+      }
+      @media only screen and (min-width: 768px)
+      {
+        display: block;
+      }
+    }
+
   }
   
   main
@@ -140,6 +178,9 @@ body
 
   .footer
   {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
     color: $secondary-font-color;
     background-color: $tertiary-background-color;
     padding: 1.5rem;
@@ -153,6 +194,7 @@ body
 
     &__logo
     {
+      font-size: clamp(20px, 4.5vw, 30px);
       font-family: $secondary-font-family;
       font-weight: 100;
     }
@@ -161,24 +203,37 @@ body
     {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: clamp(0.6rem, 2vw, 1rem);
+      font-size: clamp(16px, 3vw, 20px);
       list-style: none;
-      margin-top: 1.25rem;
 
       &__item
       {
         display: flex;
         gap: 0.5rem;
+        cursor: pointer;
 
         &__icon
         {
           display: flex;
           align-items: center;
-          font-size: 0.75rem;
+          font-size: clamp(12px, 2.25vw, 15px);
           width: 1rem;
         }
       }
+
+      @media only screen and (min-width: 768px)
+      {
+        flex-direction: row;
+        gap: 2rem;
+      }  
     }
+    @media only screen and (min-width: 768px)
+    {
+      align-items: center;
+      padding: 2rem 1.5rem;
+      gap: 3rem;
+    }   
   }
 
   .loader

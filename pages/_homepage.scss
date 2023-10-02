@@ -4,6 +4,7 @@
   background-color: $secondary-background-color;
   padding: 1rem 0;
   font-weight: 600;
+
   &__inner
   {
     position: relative;
@@ -14,19 +15,33 @@
       left: -25px;
     }
   }
+
+  @media only screen and (min-width: 768px)
+  {
+    display: none;
+  }
 }
 
 .hero
 {
   @include flex-center;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1rem, 8vw, 2rem);
   background-color: $primary-background-color;
   padding: 3rem 1.25rem;
+  background-size: 100%;
+  background-position: 0%;
+  height: clamp(240px, 64.93vw, 500px);
+  &__heading
+  {
+    font-size: clamp(22.5px, 6.05vw, 35px);
+  }
+
   &__sub-heading
   {
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 5.18vw, 1.8rem);
     text-align: center;
+    max-width: 570px;
   }
   &__btn
   {
@@ -41,7 +56,8 @@
   &__card-container
   {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1.25rem;
     margin-top: 1.25rem;
     padding: 0.5rem;
@@ -50,6 +66,7 @@
     {
       position: relative;
       display: flex;
+      width: 100%;
       gap: 1.25rem;
       padding: 1.75rem 2.25rem;
       background-color: $primary-background-color;
@@ -82,6 +99,7 @@
       {
         @include flex-center;
         font-weight: 600;
+        font-size: clamp(1rem, 3.8vw, 1.25rem);
       }
 
       &:last-child
@@ -92,6 +110,21 @@
           color: $primary-color;
         }
       }
+
+      @media only screen and (min-width: 768px)
+      {
+        max-width: 23rem;
+      }
+
+      @media only screen and (min-width: 1024px)
+      {
+        max-width: 25rem;
+      }
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      gap: 2rem;
     }
   }
 }
@@ -102,8 +135,8 @@
   background-color: $primary-background-color;
   &__cards-list
   {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
     gap: 1.25rem;
     list-style: none;
     margin-top: 1.25rem;
@@ -118,11 +151,11 @@
         height: 17.5rem;
         border-radius: 1rem;
         box-shadow: 0 3px 15px 0 #cccccc;
-
         img
         {
           flex: 7.5;
           min-height: 0;
+          width: 100%;
           object-fit: cover;
           border-radius: 1rem 1rem 0 0;
         }
@@ -136,15 +169,23 @@
           gap: 0.25rem;
           padding: 0.75rem 1rem;
 
+          &__name
+          {
+            width: 75%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+
           &__location
           {
-            font-size: 19px;
+            font-size: clamp(17px, 6vw, 19px);
           }
 
           &__heart-icon-container
           {
               position: absolute;
-              right: 1.75rem;
+              right: clamp(0rem, 7vw, 1.5rem);
               font-size: 1.55rem;
               cursor: pointer;
               fill: transparent;
@@ -154,22 +195,13 @@
               {
                   overflow: visible;
                   stroke: $primary-font-color;
-                  width: 1.5rem;
+                  width: clamp(1.35rem, 5.8vw, 1.5rem);
                   
                   path
                   {
                       stroke-dashoffset: 0;
                       stroke-dasharray: 1550;
                       transform-origin: center;
-                  }
-  
-                  &--bg
-                  {
-                      position: absolute;
-                      z-index: -1;
-                      left: 0;
-                      right: 0;
-                      stroke: none;
                   }
   
                   &--main
@@ -182,11 +214,6 @@
                       &:hover > path
                       {
                           animation: stroke-animation 2s ease-in-out forwards;
-                      }
-  
-                      &:hover ~ .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--bg > path
-                      {
-                          animation: heart-fade 2s ease-in-out forwards;
                       }
                   }
               }
@@ -206,7 +233,21 @@
           font-size: 0.95rem;
           font-weight: 600;
         }
+        @media only screen and (min-width: 1024px)
+        {
+          height: 25rem;
+        }
       }
+    }
+    @media only screen and (min-width: 768px)
+    {
+      grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
+
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      gap: 3rem;
     }
   }
 }
@@ -240,29 +281,5 @@
   {
       stroke-dashoffset: 3100;
       fill: $primary-color;
-  }
-}
-
-@keyframes heart-fade
-{
-  70%
-  {
-      fill: transparent;
-      transform: scale(1);
-  }
-  80%
-  {
-      fill: lighten($primary-color, 10);
-      transform: scale(1.1);
-      opacity: 1;
-  }
-  90%
-  {
-      opacity: 1;
-  }
-  100%
-  {
-      transform: scale(2.5);
-      opacity: 0;
   }
 }
