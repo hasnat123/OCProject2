@@ -49,6 +49,7 @@
             margin-right: 0.75rem;
             fill: transparent;
             stroke-width: 20;
+            
             &__heart-icon
             {
                 overflow: visible;
@@ -63,15 +64,6 @@
                     transform-origin: center;
                 }
 
-                &--bg
-                {
-                    position: absolute;
-                    z-index: -1;
-                    left: 0;
-                    right: 0;
-                    stroke: none;
-                }
-
                 &--main
                 {
                     &:hover
@@ -83,150 +75,164 @@
                     {
                         animation: stroke-animation 2s ease-in-out forwards;
                     }
-
-                    &:hover ~ .menu__header__heart-icon-container__heart-icon--bg > path
-                    {
-                        animation: heart-fade 2s ease-in-out forwards;
-                    }
                 }
             }
         }
     }
 
-    &__category
+    &__categories-section
     {
-        &__heading
+        &__category
         {
-            position: relative;
-            font-size: clamp(17px, 3vw, 22px);
-            font-weight: 100;
-            margin-top: 2.5rem;
-
-            &::after
+            flex: 1;
+            &__heading
             {
-                content: "";
-                position: absolute;
-                bottom: -0.5rem;
-                left: 0;
-                width: clamp(2.75rem, 7.765vw, 56.94px);
-                height: 0.25rem;
-                background-color: $tertiary-color;
+                position: relative;
+                font-size: clamp(17px, 3vw, 22px);
+                font-weight: 100;
+                margin-top: 2.5rem;
+    
+                &::after
+                {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.5rem;
+                    left: 0;
+                    width: clamp(2.75rem, 7.765vw, 56.94px);
+                    height: 0.25rem;
+                    background-color: $tertiary-color;
+                }
             }
-        }
-
-        &__card-container
-        {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            list-style: none;
-            margin-top: 2rem;
-
-            &__card
+    
+            &__card-container
             {
                 display: flex;
-                background-color: #fff;
-                border-radius: 0.85rem;
-                box-shadow: 0 5px 15px 0 #dddddd;
-                overflow: hidden;
-                animation: 0.5s ease-in-out forwards fade-in;
-                opacity: 0;
-
-                @for $i from 1 through 4
+                flex-direction: column;
+                gap: 1rem;
+                list-style: none;
+                margin-top: 2rem;
+    
+                &__card
                 {
-                    &:nth-child(#{$i})
-                    {
-                      
-                      animation-delay: $i * (1s / 5);
-                    }
-                }
-
-                &__main-content
-                {
-                    flex: 1;
                     display: flex;
-                    flex-direction: column;
-                    gap: 0.35rem;
-                    padding: 0.75rem;
-
-                    &__name
+                    background-color: #fff;
+                    border-radius: 0.85rem;
+                    box-shadow: 0 5px 15px 0 #dddddd;
+                    overflow: hidden;
+                    animation: 0.5s ease-in-out forwards fade-in;
+                    opacity: 0;
+    
+                    @for $i from 1 through 4
                     {
-                        font-size: clamp(17px, 3vw, 22px);
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        transition: 0.3s;
-                        max-width: 18rem;
-
+                        &:nth-child(#{$i})
+                        {
+                          animation-delay: $i * (1s / 5);
+                        }
                     }
     
-                    &__info
+                    &__main-content
                     {
+                        width: 100%;
                         display: flex;
-                        justify-content: space-between;
-                        gap: 1rem;
-                        font-size: clamp(15.2px, 2.682vw, 19.67px);
+                        flex-direction: column;
+                        gap: 0.35rem;
+                        padding: 0.75rem;
+                        transition: 0.3s;
     
-                        &__description
+                        &__name
                         {
+                            font-size: clamp(17px, 3vw, 22px);
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;
-                            max-width: 18rem;
                             transition: 0.3s;
+                            width: 82%;
                         }
-    
-                        &__price
+        
+                        &__info
                         {
-                            margin-right: 0.5rem;
-                            font-weight: 600;
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: clamp(15.2px, 2.682vw, 19.67px);
+        
+                            &__description
+                            {
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 82%;
+                            }
+        
+                            &__price
+                            {
+                                margin-right: 0;
+                                font-weight: 600;
+
+                                @media only screen and (min-width: 300px)
+                                {
+                                    margin-right: 0.5rem;
+                                }
+                            }
                         }
                     }
-                }
-
-                &__tick-container
-                {
-                    @include flex-center;
-                    width: 0;
-                    background-color: $tertiary-color;
-                    transition: 0.3s;
-                    transform: translateX(1rem);
-                    &__tick-icon
+    
+                    &__tick-container
                     {
                         @include flex-center;
-                        width: 1.75rem;
-                        height: 1.75rem;
-                        background-color: #fff;
-                        color: $tertiary-color;
-                        border-radius: 100%;
-                        font-size: 110%;
-                        transform: rotate(0);
+                        width: 0;
+                        background-color: $tertiary-color;
+                        transition: 0.3s;
+                        transform: translateX(1rem);
+                        &__tick-icon
+                        {
+                            @include flex-center;
+                            width: 1.75rem;
+                            height: 1.75rem;
+                            background-color: #fff;
+                            color: $tertiary-color;
+                            border-radius: 100%;
+                            font-size: 110%;
+                            transform: rotate(0);
+                        }
+                    }
+    
+                    &:hover > div:last-child
+                    {
+                        width: 4.5rem;
+                        transform: translateX(0);
+                    }
+                    
+                    &:hover > div:last-child > i
+                    {
+                        transform: rotate(360deg);
+                        transition: 0.3s;
+    
+                    }
+    
+                    &:not(:hover) > div:last-child > i
+                    {
+                        transition: 0;
+                    }
+
+                    &:hover > div
+                    {
+                        width: calc(100% - 4.5rem);
                     }
                 }
-
-                &:hover > div:last-child
-                {
-                    width: 4.5rem;
-                    transform: translateX(0);
-                }
-                
-                &:hover > div:last-child > i
-                {
-                    transform: rotate(360deg);
-                    transition: 0.3s;
-
-                }
-
-                &:not(:hover) > div:last-child > i
-                {
-                    transition: 0;
-                }
-
-                &:hover > div:first-child > div > p, &:hover > div:first-child > h3
-                {
-                    max-width: 14rem;
-                }
             }
+        }
+
+        @media only screen and (min-width: 1024px)
+        {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+          gap: 3rem;
+          margin: 3rem 0;
+        }
+
+        @media only screen and (min-width: 1500px)
+        {
+          grid-template-columns: 1fr 1fr 1fr;
         }
     }
 
@@ -234,6 +240,11 @@
     {
         @include flex-center;
         margin: 3.5rem;
+
+        @media only screen and (min-width: 1024px)
+        {
+            margin: 7.5rem 3.5rem 5rem 3.5rem;
+        }
 
         &__btn
         {
@@ -246,14 +257,16 @@
       padding: 2rem 4rem;
       justify-content: space-between;
     }
+
     @media only screen and (min-width: 1024px)
     {
-      padding: 2rem 1.25rem;
+      padding: 3rem 4rem 2rem 4rem;
     }
 
 }
 
-@keyframes fade-in {
+@keyframes fade-in
+{
     0%
     {
       opacity: 0;
@@ -265,60 +278,36 @@
         opacity: 1;
         transform: translateY(0);
     }
-  }
+}
 
-  @keyframes stroke-animation
+@keyframes stroke-animation
+{
+  0%
   {
-    0%
-    {
-        stroke-dashoffset: 0;
-    }
-    30%
-    {
-        stroke-dashoffset: 1550;
-    }
-    60%
-    {
-        stroke-dashoffset: 3100;
-        fill: transparent;
-        transform: scale(1);
-    }
-    80%
-    {
-        fill: $primary-color;
-        transform: scale(1.1);
-    }
-    90%
-    {
-        transform: scale(1);
-    }
-    100%
-    {
-        stroke-dashoffset: 3100;
-        fill: $primary-color;
-    }
+      stroke-dashoffset: 0;
   }
-
-  @keyframes heart-fade
+  30%
   {
-    70%
-    {
-        fill: transparent;
-        transform: scale(1);
-    }
-    80%
-    {
-        fill: lighten($primary-color, 10);
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    90%
-    {
-        opacity: 1;
-    }
-    100%
-    {
-        transform: scale(2.5);
-        opacity: 0;
-    }
+      stroke-dashoffset: 1550;
   }
+  60%
+  {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+  }
+  80%
+  {
+      fill: $primary-color;
+      transform: scale(1.1);
+  }
+  90%
+  {
+      transform: scale(1);
+  }
+  100%
+  {
+      stroke-dashoffset: 3100;
+      fill: $primary-color;
+  }
+}

@@ -77,6 +77,11 @@ body header.header--restaurant-page a .header__arrow {
   font-size: clamp(1.25rem, 4.7vw, 1.5rem);
   font-weight: 600;
 }
+@media only screen and (min-width: 1024px) {
+  body header.header--restaurant-page a {
+    left: 3rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   body header.header--restaurant-page {
     padding: 0.25rem 2rem;
@@ -155,9 +160,24 @@ body main .hero__btn {
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
   font-size: clamp(1rem, 3.8vw, 1.35rem);
 }
+@media only screen and (min-width: 1024px) {
+  body main .hero__btn {
+    font-size: 1.5rem;
+  }
+}
 body main .hero__btn:hover {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 0 2.5px 8.5px 2px #aeaeae;
+}
+@media only screen and (min-width: 768px) {
+  body main .hero__btn {
+    margin-top: 3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero {
+    background-position: 0% 60%;
+  }
 }
 body main .instructions-section {
   padding: 3rem 1.25rem;
@@ -210,6 +230,11 @@ body main .instructions-section__card-container__card p {
   font-weight: 600;
   font-size: clamp(1rem, 3.8vw, 1.25rem);
 }
+@media only screen and (min-width: 1024px) {
+  body main .instructions-section__card-container__card p {
+    font-size: 1.4rem;
+  }
+}
 body main .instructions-section__card-container__card:last-child {
   background-color: #ebdff8;
 }
@@ -226,13 +251,30 @@ body main .instructions-section__card-container__card:last-child .instructions-s
     max-width: 25rem;
   }
 }
+@media only screen and (min-width: 768px) {
+  body main .instructions-section__card-container {
+    margin-top: 2rem;
+  }
+}
 @media only screen and (min-width: 1024px) {
   body main .instructions-section__card-container {
+    margin: 4rem 0 4rem 0;
+    gap: clamp(2rem, 3vw, 5rem);
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .instructions-section {
+    padding: 3rem 2rem;
     gap: 2rem;
   }
 }
+@media only screen and (min-width: 1024px) {
+  body main .instructions-section {
+    padding: 3rem 4rem;
+  }
+}
 body main .restaurants-section {
-  padding: 4rem 1.25rem;
+  padding: 3rem 1.25rem;
   background-color: #F2F2F2;
 }
 body main .restaurants-section__cards-list {
@@ -319,11 +361,23 @@ body main .restaurants-section__cards-list__card-container__card__tag {
 @media only screen and (min-width: 768px) {
   body main .restaurants-section__cards-list {
     grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
+    margin-top: 2rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   body main .restaurants-section__cards-list {
     gap: 3rem;
+    margin: 4rem 0 4rem 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .restaurants-section {
+    padding: 3rem 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .restaurants-section {
+    padding: 3rem 4rem;
   }
 }
 @keyframes stroke-animation {
@@ -396,29 +450,22 @@ body main .menu__header__heart-icon-container__heart-icon path {
   stroke-dasharray: 1550;
   transform-origin: center;
 }
-body main .menu__header__heart-icon-container__heart-icon--bg {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  stroke: none;
-}
 body main .menu__header__heart-icon-container__heart-icon--main:hover {
   stroke: #9356DC;
 }
 body main .menu__header__heart-icon-container__heart-icon--main:hover > path {
   animation: stroke-animation 2s ease-in-out forwards;
 }
-body main .menu__header__heart-icon-container__heart-icon--main:hover ~ .menu__header__heart-icon-container__heart-icon--bg > path {
-  animation: heart-fade 2s ease-in-out forwards;
+body main .menu__categories-section__category {
+  flex: 1;
 }
-body main .menu__category__heading {
+body main .menu__categories-section__category__heading {
   position: relative;
   font-size: clamp(17px, 3vw, 22px);
   font-weight: 100;
   margin-top: 2.5rem;
 }
-body main .menu__category__heading::after {
+body main .menu__categories-section__category__heading::after {
   content: "";
   position: absolute;
   bottom: -0.5rem;
@@ -427,14 +474,14 @@ body main .menu__category__heading::after {
   height: 0.25rem;
   background-color: #99E2D0;
 }
-body main .menu__category__card-container {
+body main .menu__categories-section__category__card-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   list-style: none;
   margin-top: 2rem;
 }
-body main .menu__category__card-container__card {
+body main .menu__categories-section__category__card-container__card {
   display: flex;
   background-color: #fff;
   border-radius: 0.85rem;
@@ -443,51 +490,55 @@ body main .menu__category__card-container__card {
   animation: 0.5s ease-in-out forwards fade-in;
   opacity: 0;
 }
-body main .menu__category__card-container__card:nth-child(1) {
+body main .menu__categories-section__category__card-container__card:nth-child(1) {
   animation-delay: 0.2s;
 }
-body main .menu__category__card-container__card:nth-child(2) {
+body main .menu__categories-section__category__card-container__card:nth-child(2) {
   animation-delay: 0.4s;
 }
-body main .menu__category__card-container__card:nth-child(3) {
+body main .menu__categories-section__category__card-container__card:nth-child(3) {
   animation-delay: 0.6s;
 }
-body main .menu__category__card-container__card:nth-child(4) {
+body main .menu__categories-section__category__card-container__card:nth-child(4) {
   animation-delay: 0.8s;
 }
-body main .menu__category__card-container__card__main-content {
-  flex: 1;
+body main .menu__categories-section__category__card-container__card__main-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
   padding: 0.75rem;
+  transition: 0.3s;
 }
-body main .menu__category__card-container__card__main-content__name {
+body main .menu__categories-section__category__card-container__card__main-content__name {
   font-size: clamp(17px, 3vw, 22px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   transition: 0.3s;
-  max-width: 18rem;
+  width: 82%;
 }
-body main .menu__category__card-container__card__main-content__info {
+body main .menu__categories-section__category__card-container__card__main-content__info {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
   font-size: clamp(15.2px, 2.682vw, 19.67px);
 }
-body main .menu__category__card-container__card__main-content__info__description {
+body main .menu__categories-section__category__card-container__card__main-content__info__description {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 18rem;
-  transition: 0.3s;
+  width: 82%;
 }
-body main .menu__category__card-container__card__main-content__info__price {
-  margin-right: 0.5rem;
+body main .menu__categories-section__category__card-container__card__main-content__info__price {
+  margin-right: 0;
   font-weight: 600;
 }
-body main .menu__category__card-container__card__tick-container {
+@media only screen and (min-width: 300px) {
+  body main .menu__categories-section__category__card-container__card__main-content__info__price {
+    margin-right: 0.5rem;
+  }
+}
+body main .menu__categories-section__category__card-container__card__tick-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -496,7 +547,7 @@ body main .menu__category__card-container__card__tick-container {
   transition: 0.3s;
   transform: translateX(1rem);
 }
-body main .menu__category__card-container__card__tick-container__tick-icon {
+body main .menu__categories-section__category__card-container__card__tick-container__tick-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -508,25 +559,43 @@ body main .menu__category__card-container__card__tick-container__tick-icon {
   font-size: 110%;
   transform: rotate(0);
 }
-body main .menu__category__card-container__card:hover > div:last-child {
+body main .menu__categories-section__category__card-container__card:hover > div:last-child {
   width: 4.5rem;
   transform: translateX(0);
 }
-body main .menu__category__card-container__card:hover > div:last-child > i {
+body main .menu__categories-section__category__card-container__card:hover > div:last-child > i {
   transform: rotate(360deg);
   transition: 0.3s;
 }
-body main .menu__category__card-container__card:not(:hover) > div:last-child > i {
+body main .menu__categories-section__category__card-container__card:not(:hover) > div:last-child > i {
   transition: 0;
 }
-body main .menu__category__card-container__card:hover > div:first-child > div > p, body main .menu__category__card-container__card:hover > div:first-child > h3 {
-  max-width: 14rem;
+body main .menu__categories-section__category__card-container__card:hover > div {
+  width: calc(100% - 4.5rem);
+}
+@media only screen and (min-width: 1024px) {
+  body main .menu__categories-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body main .menu__categories-section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 body main .menu__btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 3.5rem;
+}
+@media only screen and (min-width: 1024px) {
+  body main .menu__btn-container {
+    margin: 7.5rem 3.5rem 5rem 3.5rem;
+  }
 }
 body main .menu__btn-container__btn {
   border: none;
@@ -540,6 +609,11 @@ body main .menu__btn-container__btn {
   font-size: clamp(1rem, 3.8vw, 1.35rem);
   padding: 0.95rem 4.75rem;
 }
+@media only screen and (min-width: 1024px) {
+  body main .menu__btn-container__btn {
+    font-size: 1.5rem;
+  }
+}
 body main .menu__btn-container__btn:hover {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 0 2.5px 8.5px 2px #aeaeae;
@@ -552,7 +626,7 @@ body main .menu__btn-container__btn:hover {
 }
 @media only screen and (min-width: 1024px) {
   body main .menu {
-    padding: 2rem 1.25rem;
+    padding: 3rem 4rem 2rem 4rem;
   }
 }
 @keyframes fade-in {
@@ -587,24 +661,6 @@ body main .menu__btn-container__btn:hover {
   100% {
     stroke-dashoffset: 3100;
     fill: #9356DC;
-  }
-}
-@keyframes heart-fade {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: #ae80e5;
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
   }
 }
 body main.main--homepage {
@@ -657,8 +713,16 @@ body .footer__list__item__icon {
 @media only screen and (min-width: 768px) {
   body .footer {
     align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
     gap: 3rem;
+  }
+  body .footer__logo {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body .footer {
+    padding: 5rem 1.5rem;
   }
 }
 body .loader {

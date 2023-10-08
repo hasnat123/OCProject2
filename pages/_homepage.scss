@@ -46,6 +46,16 @@
   &__btn
   {
     @include button;
+
+    @media only screen and (min-width: 768px)
+    {
+      margin-top: 3rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px)
+  {
+    background-position: 0% 60%;
   }
 }
 
@@ -100,6 +110,11 @@
         @include flex-center;
         font-weight: 600;
         font-size: clamp(1rem, 3.8vw, 1.25rem);
+
+        @media only screen and (min-width: 1024px)
+        {
+          font-size: 1.4rem;
+        }
       }
 
       &:last-child
@@ -122,16 +137,33 @@
       }
     }
 
+    @media only screen and (min-width: 768px)
+    {
+      margin-top: 2rem;
+    }
+
     @media only screen and (min-width: 1024px)
     {
-      gap: 2rem;
+      margin: 4rem 0 4rem 0;
+      gap: clamp(2rem, 3vw, 5rem);
     }
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+
+  @media only screen and (min-width: 1024px)
+  {
+    padding: 3rem 4rem;
   }
 }
 
 .restaurants-section
 {
-  padding: 4rem 1.25rem;
+  padding: 3rem 1.25rem;
   background-color: $primary-background-color;
   &__cards-list
   {
@@ -242,13 +274,24 @@
     @media only screen and (min-width: 768px)
     {
       grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
-
+      margin-top: 2rem;
     }
 
     @media only screen and (min-width: 1024px)
     {
       gap: 3rem;
+      margin: 4rem 0 4rem 0;
     }
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    padding: 3rem 2rem;
+  }
+
+  @media only screen and (min-width: 1024px)
+  {
+    padding: 3rem 4rem;
   }
 }
 
