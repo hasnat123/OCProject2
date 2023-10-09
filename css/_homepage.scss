@@ -29,8 +29,8 @@
   gap: clamp(1rem, 8vw, 2rem);
   background-color: $primary-background-color;
   padding: 3rem 1.25rem;
-  background-size: 100%;
-  background-position: 0%;
+  background-size: 130%;
+  background-position: 50%;
   height: clamp(240px, 64.93vw, 500px);
   &__heading
   {
@@ -51,6 +51,12 @@
     {
       margin-top: 3rem;
     }
+  }
+
+  @media only screen and (min-width: 300px)
+  {
+    background-size: 100%;
+    background-position: 0%;
   }
 
   @media only screen and (min-width: 1024px)

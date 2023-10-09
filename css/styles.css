@@ -137,8 +137,8 @@ body main .hero {
   gap: clamp(1rem, 8vw, 2rem);
   background-color: #F2F2F2;
   padding: 3rem 1.25rem;
-  background-size: 100%;
-  background-position: 0%;
+  background-size: 130%;
+  background-position: 50%;
   height: clamp(240px, 64.93vw, 500px);
 }
 body main .hero__heading {
@@ -172,6 +172,12 @@ body main .hero__btn:hover {
 @media only screen and (min-width: 768px) {
   body main .hero__btn {
     margin-top: 3rem;
+  }
+}
+@media only screen and (min-width: 300px) {
+  body main .hero {
+    background-size: 100%;
+    background-position: 0%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -405,16 +411,136 @@ body main .restaurants-section__cards-list__card-container__card__tag {
   }
 }
 body main .hero--the-full-palette {
-  background-image: url("../assets/images/the-full-palette.jpg");
+  background-image: url("../assets/images/the-full-palette-xxsmall.webp");
+}
+@media only screen and (min-width: 300px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-xsmall.webp");
+  }
+}
+@media only screen and (min-width: 480px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-small.webp");
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-medium.webp");
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-large.webp");
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-xlarge.webp");
+  }
+}
+@media only screen and (min-width: 1920px) {
+  body main .hero--the-full-palette {
+    background-image: url("../assets/images/the-full-palette-xxlarge.webp");
+  }
 }
 body main .hero--bastille {
-  background-image: url("../assets/images/bastille.jpg");
+  background-image: url("../assets/images/bastille-xxsmall.webp");
+}
+@media only screen and (min-width: 300px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-xsmall.webp");
+  }
+}
+@media only screen and (min-width: 480px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-small.webp");
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-medium.webp");
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-large.webp");
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-xlarge.webp");
+  }
+}
+@media only screen and (min-width: 1920px) {
+  body main .hero--bastille {
+    background-image: url("../assets/images/bastille-xxlarge.webp");
+  }
 }
 body main .hero--the-enchanted-plate {
-  background-image: url("../assets/images/the-enchanted-plate.jpg");
+  background-image: url("../assets/images/the-enchanted-plate-xxsmall.webp");
+}
+@media only screen and (min-width: 300px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-xsmall.webp");
+  }
+}
+@media only screen and (min-width: 480px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-small.webp");
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-medium.webp");
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-large.webp");
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-xlarge.webp");
+  }
+}
+@media only screen and (min-width: 1920px) {
+  body main .hero--the-enchanted-plate {
+    background-image: url("../assets/images/the-enchanted-plate-xxlarge.webp");
+  }
 }
 body main .hero--le-gourmand {
-  background-image: url("../assets/images/le-gourmand.jpg");
+  background-image: url("../assets/images/le-gourmand-xxsmall.webp");
+}
+@media only screen and (min-width: 300px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-xsmall.webp");
+  }
+}
+@media only screen and (min-width: 480px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-small.webp");
+  }
+}
+@media only screen and (min-width: 768px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-medium.webp");
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-large.webp");
+  }
+}
+@media only screen and (min-width: 1500px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-xlarge.webp");
+  }
+}
+@media only screen and (min-width: 1920px) {
+  body main .hero--le-gourmand {
+    background-image: url("../assets/images/le-gourmand-xxlarge.webp");
+  }
 }
 body main .menu {
   background-color: #F2F2F2;
@@ -568,7 +694,7 @@ body main .menu__categories-section__category__card-container__card:hover > div:
   transition: 0.3s;
 }
 body main .menu__categories-section__category__card-container__card:not(:hover) > div:last-child > i {
-  transition: 0;
+  transition: 0s;
 }
 body main .menu__categories-section__category__card-container__card:hover > div {
   width: calc(100% - 4.5rem);
