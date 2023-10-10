@@ -156,7 +156,7 @@ body main .hero__heading {
 }
 @media only screen and (min-width: 1024px) {
   body main .hero__heading {
-    font-size: 68px;
+    font-size: 62px;
   }
 }
 body main .hero__sub-heading {
@@ -171,7 +171,7 @@ body main .hero__sub-heading {
 }
 @media only screen and (min-width: 1024px) {
   body main .hero__sub-heading {
-    font-size: 2.83rem;
+    font-size: 2.547rem;
     max-width: 800px;
   }
 }
@@ -206,9 +206,9 @@ body main .hero__btn:hover {
 @media only screen and (min-width: 1024px) {
   body main .hero__btn {
     margin-top: clamp(3rem, 5vw, 8rem);
-    font-size: 1.75rem;
-    padding: 1.458rem 2.55rem;
-    border-radius: 1.875rem;
+    font-size: 1.575rem;
+    padding: 1.3122rem 2.295rem;
+    border-radius: 1.6875rem;
   }
 }
 @media only screen and (min-width: 300px) {
