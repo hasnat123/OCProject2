@@ -141,13 +141,39 @@ body main .hero {
   background-position: 50%;
   height: clamp(240px, 64.93vw, 500px);
 }
+@media only screen and (min-width: 1024px) {
+  body main .hero {
+    height: calc(100vh - 90.88px);
+  }
+}
 body main .hero__heading {
-  font-size: clamp(22.5px, 6.05vw, 35px);
+  font-size: clamp(22.5px, 6.05vw, 40px);
+}
+@media only screen and (min-width: 768px) {
+  body main .hero__heading {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero__heading {
+    font-size: 68px;
+  }
 }
 body main .hero__sub-heading {
   font-size: clamp(1.1rem, 5.18vw, 1.8rem);
   text-align: center;
   max-width: 570px;
+}
+@media only screen and (min-width: 768px) {
+  body main .hero__sub-heading {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero__sub-heading {
+    font-size: 2.83rem;
+    max-width: 800px;
+  }
 }
 body main .hero__btn {
   border: none;
@@ -172,6 +198,17 @@ body main .hero__btn:hover {
 @media only screen and (min-width: 768px) {
   body main .hero__btn {
     margin-top: 3rem;
+    font-size: 1.5rem;
+    padding: 1.25rem 2.1875rem;
+    border-radius: 1.875rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .hero__btn {
+    margin-top: clamp(3rem, 5vw, 8rem);
+    font-size: 1.75rem;
+    padding: 1.458rem 2.55rem;
+    border-radius: 1.875rem;
   }
 }
 @media only screen and (min-width: 300px) {
@@ -856,14 +893,22 @@ body .loader {
   display: block;
   top: 50%;
   left: 50%;
-  margin-top: -60px;
-  margin-left: -60px;
-  height: 120px;
-  width: 120px;
+  margin-top: -50px;
+  margin-left: -50px;
+  height: 100px;
+  width: 100px;
   border: #9356DC solid 6px;
   border-color: #9356DC transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite, disappear 2s linear forwards;
+}
+@media only screen and (min-width: 768px) {
+  body .loader {
+    margin-top: -60px;
+    margin-left: -60px;
+    height: 120px;
+    width: 120px;
+  }
 }
 
 @keyframes spin {

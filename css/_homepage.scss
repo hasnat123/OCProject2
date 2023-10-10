@@ -32,9 +32,25 @@
   background-size: 130%;
   background-position: 50%;
   height: clamp(240px, 64.93vw, 500px);
+
+  @media only screen and (min-width: 1024px)
+  {
+    height: calc(100vh - 90.88px);
+  }
+  
   &__heading
   {
-    font-size: clamp(22.5px, 6.05vw, 35px);
+    font-size: clamp(22.5px, 6.05vw, 40px);
+
+    @media only screen and (min-width: 768px)
+    {
+      font-size: 45px;
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      font-size: 68px;
+    }
   }
 
   &__sub-heading
@@ -42,6 +58,17 @@
     font-size: clamp(1.1rem, 5.18vw, 1.8rem);
     text-align: center;
     max-width: 570px;
+
+    @media only screen and (min-width: 768px)
+    {
+      font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      font-size: 2.83rem;
+      max-width: 800px;
+    }
   }
   &__btn
   {
@@ -50,7 +77,19 @@
     @media only screen and (min-width: 768px)
     {
       margin-top: 3rem;
+      font-size: 1.5rem;
+      padding: 1.25rem 2.1875rem;
+      border-radius: 1.875rem;
     }
+
+    @media only screen and (min-width: 1024px)
+    {
+      margin-top: clamp(3rem, 5vw, 8rem);
+      font-size: 1.75rem;
+      padding: 1.458rem 2.55rem;
+      border-radius: 1.875rem;
+    }
+
   }
 
   @media only screen and (min-width: 300px)
