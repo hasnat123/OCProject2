@@ -35,7 +35,10 @@
 
   @media only screen and (min-width: 1024px)
   {
-    height: calc(100vh - 90.88px);
+    &--homepage
+    {
+      height: calc(100vh - 90.88px);
+    }
   }
   
   &__heading

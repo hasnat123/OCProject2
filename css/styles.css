@@ -142,7 +142,7 @@ body main .hero {
   height: clamp(240px, 64.93vw, 500px);
 }
 @media only screen and (min-width: 1024px) {
-  body main .hero {
+  body main .hero--homepage {
     height: calc(100vh - 90.88px);
   }
 }
@@ -599,14 +599,23 @@ body main .menu__header__heart-icon-container {
   display: flex;
   font-size: 1.55rem;
   cursor: pointer;
-  margin-right: 0.75rem;
   fill: transparent;
   stroke-width: 20;
+}
+@media only screen and (min-width: 335px) {
+  body main .menu__header__heart-icon-container {
+    margin-right: 0.75rem;
+  }
 }
 body main .menu__header__heart-icon-container__heart-icon {
   overflow: visible;
   stroke: #000000;
-  width: clamp(1.35rem, 5.8vw, 1.8rem);
+  width: 1.2rem;
+}
+@media only screen and (min-width: 335px) {
+  body main .menu__header__heart-icon-container__heart-icon {
+    width: clamp(1.35rem, 5.8vw, 1.8rem);
+  }
 }
 body main .menu__header__heart-icon-container__heart-icon path {
   stroke-dashoffset: 0;
