@@ -1,0 +1,23 @@
+.location-bar
+{
+  @include flex-center;
+  background-color: $secondary-background-color;
+  padding: 1rem 0;
+  font-weight: 600;
+
+  &__inner
+  {
+    position: relative;
+  
+    &__icon
+    {
+      position: absolute;
+      left: -25px;
+    }
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    display: none;
+  }
+}

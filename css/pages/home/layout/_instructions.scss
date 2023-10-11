@@ -1,0 +1,101 @@
+.instructions-section
+{
+  padding: 3rem 1.25rem;
+  list-style: none;
+  &__card-container
+  {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem;
+
+    &__card
+    {
+      position: relative;
+      display: flex;
+      width: 100%;
+      gap: 1.25rem;
+      padding: 1.75rem 2.25rem;
+      background-color: $primary-background-color;
+      border-radius: 1.15rem;
+      box-shadow: 0 3px 15px 0 #cccccc;
+      cursor: pointer;
+
+      &__circle
+      {
+        position: absolute;
+        @include flex-center;
+        left: -0.6rem;
+        border-radius: 100%;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: $primary-color;
+        color: $secondary-font-color;
+        font-size: 0.8rem;
+        line-height: 0;
+      }
+
+      &__icon
+      {
+        @include flex-center;
+        font-size: 1.3rem;
+        color: #7c7c7c;
+      }
+
+      p
+      {
+        @include flex-center;
+        font-weight: 600;
+        font-size: clamp(1rem, 3.8vw, 1.25rem);
+
+        @media only screen and (min-width: 1024px)
+        {
+          font-size: 1.4rem;
+        }
+      }
+
+      &:last-child
+      {
+        background-color: lighten($color: $primary-color , $amount: 32.5);
+        .instructions-section__card-container__card__icon
+        {
+          color: $primary-color;
+        }
+      }
+
+      @media only screen and (min-width: 768px)
+      {
+        max-width: 23rem;
+      }
+
+      @media only screen and (min-width: 1024px)
+      {
+        max-width: 25rem;
+      }
+    }
+
+    @media only screen and (min-width: 768px)
+    {
+      margin-top: 2rem;
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      margin: 4rem 0 4rem 0;
+      gap: clamp(2rem, 3vw, 5rem);
+    }
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+
+  @media only screen and (min-width: 1024px)
+  {
+    padding: 3rem 4rem;
+  }
+}

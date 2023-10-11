@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Shrikhand&display=swap');
+
+html
+{
+  font-family: $primary-font-family;
+  font-size: 1rem;
+  color: $primary-font-color;
+  scroll-behavior: smooth;
+}
+
+a
+{
+  color: $primary-font-color;
+}
+
+h1
+{
+  font-size: $h1-font-size;
+  font-family: $secondary-font-family;
+}
+
+h2
+{
+  font-size: $h2-font-size;
+  font-weight: 900;
+}
+
+h3
+{
+  font-size: $h3-font-size;
+  font-weight: 900;
+}

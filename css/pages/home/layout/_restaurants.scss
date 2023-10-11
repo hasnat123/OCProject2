@@ -1,0 +1,133 @@
+.restaurants-section
+{
+  padding: 3rem 1.25rem;
+  background-color: $primary-background-color;
+  &__cards-list
+  {
+    display: grid;
+    justify-content: center;
+    gap: 1.25rem;
+    list-style: none;
+    margin-top: 1.25rem;
+    
+    &__card-container
+    {
+      &__card
+      {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 17.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 3px 15px 0 #cccccc;
+        img
+        {
+          flex: 7.5;
+          min-height: 0;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 1rem 1rem 0 0;
+        }
+
+        &__info
+        {
+          flex: 2.5;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.25rem;
+          padding: 0.75rem 1rem;
+
+          &__name
+          {
+            width: 75%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+
+          &__location
+          {
+            font-size: clamp(17px, 6vw, 19px);
+          }
+
+          &__heart-icon-container
+          {
+              position: absolute;
+              right: clamp(0rem, 7vw, 1.5rem);
+              font-size: 1.55rem;
+              cursor: pointer;
+              fill: transparent;
+              stroke-width: 20;
+
+              &__heart-icon
+              {
+                  overflow: visible;
+                  stroke: $primary-font-color;
+                  width: clamp(1.35rem, 5.8vw, 1.5rem);
+                  
+                  path
+                  {
+                      stroke-dashoffset: 0;
+                      stroke-dasharray: 1550;
+                      transform-origin: center;
+                  }
+  
+                  &--main
+                  {
+                      &:hover
+                      {
+                          stroke: $primary-color;
+                      }
+  
+                      &:hover > path
+                      {
+                          animation: stroke-animation 2s ease-in-out forwards;
+                      }
+                  }
+              }
+          }
+        }
+        
+        &__tag
+        {
+          position: absolute;
+          line-height: 0;
+          right: 0.75rem;
+          top: 0.8rem;
+          padding: 1rem 1.75rem;
+          background-color: $tertiary-color;
+          color: darken($color: $tertiary-color, $amount: 40);
+          border-radius: 0.15rem;
+          font-size: 0.95rem;
+          font-weight: 600;
+        }
+        @media only screen and (min-width: 1024px)
+        {
+          height: 25rem;
+        }
+      }
+    }
+    @media only screen and (min-width: 768px)
+    {
+      grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
+      margin-top: 2rem;
+    }
+
+    @media only screen and (min-width: 1024px)
+    {
+      gap: 3rem;
+      margin: 4rem 0 4rem 0;
+    }
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    padding: 3rem 2rem;
+  }
+
+  @media only screen and (min-width: 1024px)
+  {
+    padding: 3rem 4rem;
+  }
+}

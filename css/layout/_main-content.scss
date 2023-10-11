@@ -1,0 +1,14 @@
+main
+{
+  position: relative;
+  z-index: 0;
+  @import './../pages/home/home';
+  @import './../pages/restaurant/restaurant';
+
+  &.main--homepage
+  {
+    visibility: hidden;
+    animation: appear 1s linear forwards;
+    animation-delay: 2s;
+  }
+}

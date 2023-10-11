@@ -8,6 +8,27 @@
   text-decoration: none;
 }
 
+button {
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background: linear-gradient(#FF79DA, #9356DC);
+  padding: 1rem 1.75rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
+  font-size: clamp(1rem, 3.8vw, 1.35rem);
+}
+@media only screen and (min-width: 1024px) {
+  button {
+    font-size: 1.5rem;
+  }
+}
+button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 0 2.5px 8.5px 2px #aeaeae;
+}
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -34,6 +55,64 @@ h3 {
   font-weight: 900;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes appear {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #9356DC;
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: #9356DC;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body {
   overflow-x: hidden;
   background-color: #fff;
@@ -175,7 +254,7 @@ body main .hero__sub-heading {
     max-width: 800px;
   }
 }
-body main .hero__btn {
+body main .hero__btn button {
   border: none;
   outline: none;
   color: #ffffff;
@@ -187,11 +266,11 @@ body main .hero__btn {
   font-size: clamp(1rem, 3.8vw, 1.35rem);
 }
 @media only screen and (min-width: 1024px) {
-  body main .hero__btn {
+  body main .hero__btn button {
     font-size: 1.5rem;
   }
 }
-body main .hero__btn:hover {
+body main .hero__btn button:hover {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 0 2.5px 8.5px 2px #aeaeae;
 }
@@ -421,30 +500,6 @@ body main .restaurants-section__cards-list__card-container__card__tag {
 @media only screen and (min-width: 1024px) {
   body main .restaurants-section {
     padding: 3rem 4rem;
-  }
-}
-@keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: #9356DC;
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: #9356DC;
   }
 }
 body main .hero--the-full-palette {
@@ -770,6 +825,9 @@ body main .menu__btn-container {
   }
 }
 body main .menu__btn-container__btn {
+  padding: 0.95rem 4.75rem;
+}
+body main .menu__btn-container__btn button {
   border: none;
   outline: none;
   color: #ffffff;
@@ -779,14 +837,13 @@ body main .menu__btn-container__btn {
   cursor: pointer;
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
   font-size: clamp(1rem, 3.8vw, 1.35rem);
-  padding: 0.95rem 4.75rem;
 }
 @media only screen and (min-width: 1024px) {
-  body main .menu__btn-container__btn {
+  body main .menu__btn-container__btn button {
     font-size: 1.5rem;
   }
 }
-body main .menu__btn-container__btn:hover {
+body main .menu__btn-container__btn button:hover {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 0 2.5px 8.5px 2px #aeaeae;
 }
@@ -799,40 +856,6 @@ body main .menu__btn-container__btn:hover {
 @media only screen and (min-width: 1024px) {
   body main .menu {
     padding: 3rem 4rem 2rem 4rem;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(15%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: #9356DC;
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: #9356DC;
   }
 }
 body main.main--homepage {
@@ -917,30 +940,5 @@ body .loader {
     margin-left: -60px;
     height: 120px;
     width: 120px;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes disappear {
-  0% {
-    display: block;
-  }
-  100% {
-    display: none;
-  }
-}
-@keyframes appear {
-  0% {
-    visibility: hidden;
-  }
-  100% {
-    visibility: visible;
   }
 }/*# sourceMappingURL=styles.css.map */

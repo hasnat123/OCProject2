@@ -1,0 +1,74 @@
+header
+{
+  position: relative;
+  z-index: 1;
+  @include flex-center;
+  line-height: 1.75rem;
+  box-shadow: 0 3px 4px 0 #cccccc;
+
+  &.header--homepage
+  {
+    visibility: hidden;
+    animation: appear 1s linear forwards;
+    animation-delay: 2s;
+
+    @media only screen and (min-width: 768px)
+    {
+      padding: 0.25rem 2rem;
+      justify-content: space-between;
+    }
+    @media only screen and (min-width: 1024px)
+    {
+      padding: 0.5rem 4rem;
+    }
+  }
+
+  &.header--restaurant-page
+  {
+    box-shadow: none;
+    
+    a
+    {
+      position: absolute;
+      left: 1.5rem;
+      @include flex-center;
+
+      .header__arrow
+      {
+        font-size: clamp(1.25rem, 4.7vw, 1.5rem);
+        font-weight: 600;
+      }
+
+      @media only screen and (min-width: 1024px)
+      {
+        left: 3rem;
+      }
+    }
+
+    @media only screen and (min-width: 768px)
+    {
+      padding: 0.25rem 2rem;
+    }
+    @media only screen and (min-width: 1024px)
+    {
+      padding: 0.5rem 4rem;
+    }
+  }
+
+  .header__location
+  {
+    display: none;
+    font-weight: 600;
+    font-size: 1.15rem;
+
+    &__icon
+    {
+      margin-right: 0.75rem;
+    }
+    @media only screen and (min-width: 768px)
+    {
+      display: block;
+    }
+  }
+
+}

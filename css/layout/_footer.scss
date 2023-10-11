@@ -1,0 +1,70 @@
+.footer
+{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: $secondary-font-color;
+  background-color: $tertiary-background-color;
+  padding: 1.5rem;
+
+  &--homepage
+  {
+    visibility: hidden;
+    animation: appear 1s linear forwards;
+    animation-delay: 2s;
+  }
+
+  &__logo
+  {
+    font-size: clamp(20px, 4.5vw, 30px);
+    font-family: $secondary-font-family;
+    font-weight: 100;
+  }
+
+  &__list
+  {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 2vw, 1rem);
+    font-size: clamp(16px, 3vw, 20px);
+    list-style: none;
+
+    &__item
+    {
+      display: flex;
+      gap: 0.5rem;
+      cursor: pointer;
+
+      &__icon
+      {
+        display: flex;
+        align-items: center;
+        font-size: clamp(12px, 2.25vw, 15px);
+        width: 1rem;
+      }
+    }
+
+    @media only screen and (min-width: 768px)
+    {
+      flex-direction: row;
+      gap: 2rem;
+    }  
+  }
+
+  @media only screen and (min-width: 768px)
+  {
+    align-items: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+
+    &__logo
+    {
+      font-size: 35px;
+    }
+  }   
+
+  @media only screen and (min-width: 1024px)
+  {
+    padding: 5rem 1.5rem;
+  }  
+}

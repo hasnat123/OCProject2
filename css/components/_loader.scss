@@ -1,0 +1,23 @@
+.loader
+{
+  position: fixed;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  height: 100px;
+  width: 100px;
+  border: $primary-color solid 6px;
+  border-color: $primary-color transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, disappear 2s linear forwards;
+
+  @media only screen and (min-width: 768px)
+  {
+    margin-top: -60px;
+    margin-left: -60px;
+    height: 120px;
+    width: 120px;
+  }
+}

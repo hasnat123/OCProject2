@@ -1,0 +1,92 @@
+//Loader
+
+@keyframes spin
+{
+  0%
+  {
+    transform: rotate(0);
+  }
+
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes disappear
+{
+  0%
+  {
+    display: block;
+  }
+
+  100%
+  {
+    display: none;
+  }
+}
+
+@keyframes appear
+{
+  0%
+  {
+    visibility: hidden;
+  }
+
+  100%
+  {
+    visibility: visible;
+
+  }
+}
+
+//Heart icon
+
+@keyframes stroke-animation
+{
+  0%
+  {
+      stroke-dashoffset: 0;
+  }
+  30%
+  {
+      stroke-dashoffset: 1550;
+  }
+  60%
+  {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+  }
+  80%
+  {
+      fill: $primary-color;
+      transform: scale(1.1);
+  }
+  90%
+  {
+      transform: scale(1);
+  }
+  100%
+  {
+      stroke-dashoffset: 3100;
+      fill: $primary-color;
+  }
+}
+
+//Menu cards
+
+@keyframes fade-in
+{
+    0%
+    {
+      opacity: 0;
+      transform: translateY(15%);
+    }
+
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
