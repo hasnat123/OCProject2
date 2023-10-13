@@ -10,7 +10,7 @@ button
   box-shadow: 0 2.5px 8.5px 2px #bbbbbb;
   font-size: clamp(1rem, 3.8vw, 1.35rem);
 
-  @media only screen and (min-width: 1024px)
+  @include media(desktop)
   {
     font-size: 1.5rem;
   }

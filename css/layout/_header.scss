@@ -11,12 +11,12 @@ header
     animation: appear 1s linear forwards;
     animation-delay: 2s;
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       padding: 0.25rem 2rem;
       justify-content: space-between;
     }
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       padding: 0.5rem 4rem;
     }
@@ -37,17 +37,17 @@ header
         font-weight: 600;
       }
 
-      @media only screen and (min-width: 1024px)
+      @include media(desktop)
       {
         left: 3rem;
       }
     }
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       padding: 0.25rem 2rem;
     }
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       padding: 0.5rem 4rem;
     }
@@ -63,7 +63,8 @@ header
     {
       margin-right: 0.75rem;
     }
-    @media only screen and (min-width: 768px)
+    
+    @include media(tablet)
     {
       display: block;
     }

@@ -13,7 +13,7 @@
   border-radius: 50%;
   animation: spin 1s linear infinite, disappear 2s linear forwards;
 
-  @media only screen and (min-width: 768px)
+  @include media(tablet)
   {
     margin-top: -60px;
     margin-left: -60px;

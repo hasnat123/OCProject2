@@ -97,31 +97,32 @@
           font-size: 0.95rem;
           font-weight: 600;
         }
-        @media only screen and (min-width: 1024px)
+        @include media(desktop)
         {
           height: 25rem;
         }
       }
     }
-    @media only screen and (min-width: 768px)
+
+    @include media(tablet)
     {
       grid-template-columns: minmax(0, 40rem) minmax(0, 40rem);
       margin-top: 2rem;
     }
 
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       gap: 3rem;
       margin: 4rem 0 4rem 0;
     }
   }
 
-  @media only screen and (min-width: 768px)
+  @include media(tablet)
   {
     padding: 3rem 2rem;
   }
 
-  @media only screen and (min-width: 1024px)
+  @include media(desktop)
   {
     padding: 3rem 4rem;
   }

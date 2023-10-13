@@ -43,14 +43,14 @@
       }
     }
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       flex-direction: row;
       gap: 2rem;
-    }  
+    }
   }
 
-  @media only screen and (min-width: 768px)
+  @include media(tablet)
   {
     align-items: center;
     padding: 3rem 1.5rem;
@@ -62,7 +62,7 @@
     }
   }   
 
-  @media only screen and (min-width: 1024px)
+  @include media(desktop)
   {
     padding: 5rem 1.5rem;
   }  

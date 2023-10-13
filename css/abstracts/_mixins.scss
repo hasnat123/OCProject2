@@ -1,3 +1,4 @@
+//Centers contents of flexbox
 @mixin flex-center
 {
   display: flex;
@@ -5,6 +6,7 @@
   align-items: center;
 }
 
+//Aligns flexbox
 @mixin alignment($gap, $direction: row, $position: relative, $justify: flex-start, $align: flex-start)
 {
   position: $position;
@@ -15,11 +17,27 @@
   gap: $gap;
 }
 
+//Displays different sized hero image depending on screen size
 @mixin hero-media-queries($image) {
   background-image: url('./../../assets/images/#{$image}-xxsmall.webp');
   @each $size, $breakpoint in $hero-image-breakpoints {
     @media only screen and (min-width: #{$breakpoint}) {
       background-image: url('./../../assets/images/#{$image}-#{$size}.webp');
     }
+  }
+}
+
+//Handles media queries
+@mixin media($breakpoint) {
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else {
+    @content;
   }
 }

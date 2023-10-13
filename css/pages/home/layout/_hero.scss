@@ -7,7 +7,7 @@
   background-position: 50%;
   height: clamp(240px, 64.93vw, 500px);
 
-  @media only screen and (min-width: 1024px)
+  @include media(desktop)
   {
     &--homepage
     {
@@ -19,12 +19,12 @@
   {
     font-size: clamp(22.5px, 6.05vw, 40px);
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       font-size: 45px;
     }
 
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       font-size: 62px;
     }
@@ -36,12 +36,12 @@
     text-align: center;
     max-width: 570px;
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       font-size: 2rem;
     }
 
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       font-size: 2.547rem;
       max-width: 800px;
@@ -51,7 +51,7 @@
   {
     @import './../../../components/buttons';
 
-    @media only screen and (min-width: 768px)
+    @include media(tablet)
     {
       margin-top: 3rem;
       font-size: 1.5rem;
@@ -59,7 +59,7 @@
       border-radius: 1.875rem;
     }
 
-    @media only screen and (min-width: 1024px)
+    @include media(desktop)
     {
       margin-top: clamp(3rem, 5vw, 8rem);
       font-size: 1.575rem;
@@ -75,7 +75,7 @@
     background-position: 0%;
   }
 
-  @media only screen and (min-width: 1024px)
+  @include media(desktop)
   {
     background-position: 0% 60%;
   }
