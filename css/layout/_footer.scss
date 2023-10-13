@@ -1,8 +1,6 @@
 .footer
 {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  @include alignment(1.25rem, column);
   color: $secondary-font-color;
   background-color: $tertiary-background-color;
   padding: 1.5rem;
@@ -28,22 +26,18 @@
 
   &__list
   {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.6rem, 2vw, 1rem);
+    @include alignment(clamp(0.6rem, 2vw, 1rem), column);
     font-size: clamp(16px, 3vw, 20px);
     list-style: none;
 
     &__item
     {
-      display: flex;
-      gap: 0.5rem;
+      @include alignment(0.5rem, row, relative, flex-start, center);
       cursor: pointer;
 
       &__icon
       {
-        display: flex;
-        align-items: center;
+        @include flex-center;
         font-size: clamp(12px, 2.25vw, 15px);
         width: 1rem;
       }

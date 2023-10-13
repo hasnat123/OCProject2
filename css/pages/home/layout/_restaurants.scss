@@ -14,9 +14,7 @@
     {
       &__card
       {
-        position: relative;
-        display: flex;
-        flex-direction: column;
+        @include alignment(0, column, relative, flex-start, normal);
         height: 17.5rem;
         border-radius: 1rem;
         box-shadow: 0 3px 15px 0 #cccccc;
@@ -31,11 +29,8 @@
 
         &__info
         {
+          @include alignment(0.25rem, column, relative, center);
           flex: 2.5;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 0.25rem;
           padding: 0.75rem 1rem;
 
           &__name

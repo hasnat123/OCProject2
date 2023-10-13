@@ -1,8 +1,7 @@
 header
 {
-  position: relative;
+  @include alignment(0, row, relative, center, center);
   z-index: 1;
-  @include flex-center;
   line-height: 1.75rem;
   box-shadow: 0 3px 4px 0 #cccccc;
 
@@ -29,9 +28,8 @@ header
     
     a
     {
-      position: absolute;
+      @include alignment(0, row, absolute, center, center);
       left: 1.5rem;
-      @include flex-center;
 
       .header__arrow
       {

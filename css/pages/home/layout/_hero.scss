@@ -1,8 +1,6 @@
 .hero
 {
-  @include flex-center;
-  flex-direction: column;
-  gap: clamp(1rem, 8vw, 2rem);
+  @include alignment(clamp(1rem, 8vw, 2rem), column, static, center, center);
   background-color: $primary-background-color;
   padding: 3rem 1.25rem;
   background-size: 130%;

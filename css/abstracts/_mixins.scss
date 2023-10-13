@@ -4,3 +4,22 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin alignment($gap, $direction: row, $position: relative, $justify: flex-start, $align: flex-start)
+{
+  position: $position;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin hero-media-queries($image) {
+  background-image: url('./../../assets/images/#{$image}-xxsmall.webp');
+  @each $size, $breakpoint in $hero-image-breakpoints {
+    @media only screen and (min-width: #{$breakpoint}) {
+      background-image: url('./../../assets/images/#{$image}-#{$size}.webp');
+    }
+  }
+}

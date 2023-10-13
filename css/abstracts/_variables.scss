@@ -15,3 +15,21 @@ $tertiary-background-color: #363636;
 $h1-font-size: clamp(30px, 8vw, 35px);
 $h2-font-size: clamp(22.5px, 7vw, 27.5px);
 $h3-font-size: clamp(18px, 5vw, 20px);
+
+
+$hero-image-breakpoints:
+(
+  'xxsmall': 300px,
+  'xsmall': 480px,
+  'small': 768px,
+  'medium': 1024px,
+  'large': 1500px,
+  'xlarge': 1920px,
+);
+
+$hero-images: (
+  'the-full-palette',
+  'bastille',
+  'the-enchanted-plate',
+  'le-gourmand'
+);
