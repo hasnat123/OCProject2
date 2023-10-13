@@ -454,8 +454,18 @@ body main .restaurants-section__cards-list__card-container__card__info__name {
   overflow: hidden;
   white-space: nowrap;
 }
+@media only screen and (min-width: 1024px) {
+  body main .restaurants-section__cards-list__card-container__card__info__name {
+    font-size: 1.4rem;
+  }
+}
 body main .restaurants-section__cards-list__card-container__card__info__location {
   font-size: clamp(17px, 6vw, 19px);
+}
+@media only screen and (min-width: 1024px) {
+  body main .restaurants-section__cards-list__card-container__card__info__location {
+    font-size: 1.33rem;
+  }
 }
 body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container {
   position: absolute;
@@ -480,6 +490,17 @@ body main .restaurants-section__cards-list__card-container__card__info__heart-ic
 }
 body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon--main:hover > path {
   animation: stroke-animation 2s ease-in-out forwards;
+}
+@media only screen and (min-width: 1024px) {
+  body main .restaurants-section__cards-list__card-container__card__info__heart-icon-container__heart-icon {
+    width: 1.65rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .restaurants-section__cards-list__card-container__card__info {
+    flex: 2;
+    gap: 0.25rem;
+  }
 }
 body main .restaurants-section__cards-list__card-container__card__tag {
   position: absolute;
@@ -506,7 +527,7 @@ body main .restaurants-section__cards-list__card-container__card__tag {
 }
 @media only screen and (min-width: 1024px) {
   body main .restaurants-section__cards-list {
-    gap: 3rem;
+    gap: clamp(2rem, 3.5vw, 5rem);
     margin: 4rem 0 4rem 0;
   }
 }

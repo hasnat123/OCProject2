@@ -39,11 +39,21 @@
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+
+            @include media(desktop)
+            {
+              font-size: 1.4rem;
+            }
           }
 
           &__location
           {
             font-size: clamp(17px, 6vw, 19px);
+
+            @include media(desktop)
+            {
+              font-size: 1.33rem;
+            }
           }
 
           &__heart-icon-container
@@ -80,7 +90,18 @@
                           animation: stroke-animation 2s ease-in-out forwards;
                       }
                   }
+
+                  @include media(desktop)
+                  {
+                    width: 1.65rem;
+                  }
               }
+          }
+
+          @include media(desktop)
+          {
+            flex: 2;
+            gap: 0.25rem;
           }
         }
         
@@ -112,7 +133,7 @@
 
     @include media(desktop)
     {
-      gap: 3rem;
+      gap: clamp(2rem, 3.5vw, 5rem);
       margin: 4rem 0 4rem 0;
     }
   }
