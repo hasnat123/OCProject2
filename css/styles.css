@@ -848,14 +848,14 @@ body main .menu__categories-section__category__card-container__card:hover > div 
 @media only screen and (min-width: 1024px) {
   body main .menu__categories-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 3rem;
     margin: 3rem 0;
   }
 }
 @media only screen and (min-width: 1500px) {
   body main .menu__categories-section {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 body main .menu__btn-container {
