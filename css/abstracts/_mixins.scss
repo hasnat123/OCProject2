@@ -19,10 +19,10 @@
 
 //Displays different sized hero image depending on screen size
 @mixin hero-media-queries($image) {
-  background-image: url('./../../assets/images/#{$image}-xxsmall.webp');
+  background-image: url('./../assets/images/#{$image}-xxsmall.webp');
   @each $size, $breakpoint in $hero-image-breakpoints {
     @media only screen and (min-width: #{$breakpoint}) {
-      background-image: url('./../../assets/images/#{$image}-#{$size}.webp');
+      background-image: url('./../assets/images/#{$image}-#{$size}.webp');
     }
   }
 }
