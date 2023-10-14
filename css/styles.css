@@ -760,6 +760,7 @@ body main .menu__categories-section__category__card-container__card {
   overflow: hidden;
   animation: 0.5s ease-in-out forwards fade-in;
   opacity: 0;
+  cursor: pointer;
 }
 body main .menu__categories-section__category__card-container__card:nth-child(1) {
   animation-delay: 0.2s;

@@ -106,7 +106,8 @@
                     overflow: hidden;
                     animation: 0.5s ease-in-out forwards fade-in;
                     opacity: 0;
-    
+                    cursor: pointer;
+
                     @for $i from 1 through 4
                     {
                         &:nth-child(#{$i})
