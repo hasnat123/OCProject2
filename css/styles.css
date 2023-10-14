@@ -745,13 +745,15 @@ body main .menu__categories-section__category__card-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: normal;
+  align-items: center;
   gap: 1rem;
   list-style: none;
   margin-top: 2rem;
 }
 body main .menu__categories-section__category__card-container__card {
   display: flex;
+  width: 100%;
+  max-width: clamp(470px, 80vw, 100%);
   background-color: #fff;
   border-radius: 0.85rem;
   box-shadow: 0 5px 15px 0 #dddddd;
@@ -845,12 +847,22 @@ body main .menu__categories-section__category__card-container__card:not(:hover) 
 body main .menu__categories-section__category__card-container__card:hover > div {
   width: calc(100% - 4.5rem);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
+  body main .menu__categories-section__category__card-container__card {
+    max-width: none;
+  }
+}
+@media only screen and (min-width: 768px) {
   body main .menu__categories-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 3rem;
     margin: 3rem 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body main .menu__categories-section {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   }
 }
 @media only screen and (min-width: 1500px) {
@@ -862,9 +874,9 @@ body main .menu__btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3.5rem;
+  margin: 5.5rem;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
   body main .menu__btn-container {
     margin: 7.5rem 3.5rem 5rem 3.5rem;
   }

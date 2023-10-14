@@ -91,13 +91,15 @@
     
             &__card-container
             {
-                @include alignment(1rem, column, relative, flex-start, normal);
+                @include alignment(1rem, column, relative, flex-start, center);
                 list-style: none;
                 margin-top: 2rem;
     
                 &__card
                 {
                     display: flex;
+                    width: 100%;
+                    max-width: clamp(470px, 80vw, 100%);
                     background-color: #fff;
                     border-radius: 0.85rem;
                     box-shadow: 0 5px 15px 0 #dddddd;
@@ -200,16 +202,26 @@
                     {
                         width: calc(100% - 4.5rem);
                     }
+
+                    @include media(tablet)
+                    {
+                      max-width: none;
+                    }
                 }
             }
         }
 
-        @include media(desktop)
+        @include media(tablet)
         {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
           gap: 3rem;
           margin: 3rem 0;
+        }
+
+        @include media(desktop)
+        {
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         }
 
         @media only screen and (min-width: 1500px)
@@ -221,9 +233,9 @@
     &__btn-container
     {
         @include flex-center;
-        margin: 3.5rem;
+        margin: 5.5rem;
 
-        @include media(desktop)
+        @include media(tablet)
         {
             margin: 7.5rem 3.5rem 5rem 3.5rem;
         }
